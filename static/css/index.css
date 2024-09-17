@@ -138,6 +138,8 @@ body {
   border-radius: 5px;
 }
 
+
+
 .interpolation-video-column {
 }
 
@@ -154,4 +156,21 @@ body {
 }
 #interpolation-image-wrapper img {
   border-radius: 5px;
+}
+
+/*custom*/
+.main-content{
+  margin-bottom: 50px;
+}
+
+/*Abstract*/
+.rep-text-content {
+  text-align: justify;
+}
+.rep-image-container {
+  float: right; /* 이미지를 왼쪽에 정렬 */
+  width: 50%; /* 이미지 너비 */
+  margin-left: 10px; /* 텍스트와의 간격 */
+  margin-bottom: -20px; /* 텍스트와의 간격 */
+  padding: 0px 0; /* 상하 패딩 */
 }
