@@ -163,6 +163,12 @@ body {
   margin-bottom: 50px;
 }
 
+/*Rep map*/
+.first-section{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 /*Abstract*/
 .rep-text-content {
   text-align: justify;
