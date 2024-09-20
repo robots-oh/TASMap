@@ -2,7 +2,7 @@ from PIL import Image
 import cv2
 import numpy as np
 
-def resize_gif(input_path, output_path, size=(300, 300)):
+def resize_gif(input_path, output_path, size=(500, 500)):
     # GIF 파일을 열기
     gif = Image.open(input_path)
     frames = []
@@ -27,4 +27,4 @@ def resize_gif(input_path, output_path, size=(300, 300)):
     frames[0].save(output_path, save_all=True, append_images=frames[1:], loop=0, duration=gif.info['duration'])
 
 # 사용 예시
-resize_gif(r'D:\workspace\difficult\git\TASMap\static\gifs\0c1_PRRT.gif', 'output.gif')
+resize_gif(r'D:\workspace\difficult\git\TASMap\static\gifs\temp.gif', 'output.gif')
