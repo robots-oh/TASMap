@@ -119,7 +119,7 @@ body {
   overflow: hidden;
   border: 1px solid #bbb;
   border-radius: 10px;
-  padding: 0;
+  /* padding: 0; */
   font-size: 0;
 }
 
@@ -160,7 +160,7 @@ body {
 
 /*custom*/
 .main-content{
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 /*Rep map*/
@@ -179,4 +179,37 @@ body {
   margin-left: 10px; /* 텍스트와의 간격 */
   margin-bottom: -20px; /* 텍스트와의 간격 */
   padding: 0px 0; /* 상하 패딩 */
+}
+
+
+
+
+
+
+
+
+/*GIF list*/
+.item-steve {
+  position: relative;
+  text-align: center;
+}
+
+.text-overlay {
+  position: absolute;
+  bottom: 5px; /* 이미지 아래쪽에 위치 */
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 반투명 검은색 배경 */
+  color: white; /* 흰색 텍스트 */
+  padding: 5px;
+  font-size: 16px; /* 큰 글자 크기 */
+  text-shadow: 1px 1px 2px black; /* 검은색 그림자 */
+}
+
+.hero-body{
+  max-width: 780px;
+  width: 100%;
+  /* height: 800; */
+  margin: auto;
+  display: block;
 }
