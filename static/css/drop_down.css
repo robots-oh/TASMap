@@ -1,0 +1,108 @@
+#controls {
+  position: relative;
+  width: 100%;
+}
+
+
+/* Custom dropdown style */
+#ply-set-select {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+  appearance: none;
+  background-image: url('data:image/svg+xml;base64,...'); /* Add your down arrow icon */
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom dropdown options */
+#ply-set-select option {
+  padding: 10px;
+  font-size: 16px;
+}
+
+/* Custom Button Styles */
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  background-color: #0066ff;
+  transition: background-color 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: #0052cc;
+}
+
+button:active {
+  background-color: #003d99;
+}
+
+/* Additional style for specific buttons if needed */
+#toggle-ply2 {
+  background-color: #ff007a;
+}
+
+#toggle-ply2:hover {
+  background-color: #e6006f;
+}
+
+#toggle-ply2:active {
+  background-color: #cc0066;
+}
+
+/* Top-down view button customization */
+#top-down-view {
+  background-color: #00cc99;
+  margin-bottom: 10px;
+}
+
+#top-down-view:hover {
+  background-color: #00b388;
+}
+
+#top-down-view:active {
+  background-color: #009973;
+}
+
+/* Custom dropdown styling with media icons */
+#ply-set-select {
+  position: relative;
+  background-image: none;
+  padding-left: 50px;
+}
+
+#ply-set-select:before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url('data:image/svg+xml;base64,...'); /* Add custom media icon */
+  background-size: 30px 30px;
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+}
+
+#ply-set-select:hover {
+  border: 1px solid #888888;
+  font-weight: bold;
+}
+#ply-set-select:active {
+  border: 1px solid #888888;
+}
+

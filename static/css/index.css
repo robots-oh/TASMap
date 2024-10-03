@@ -164,7 +164,7 @@ body {
 }
 
 .top-banner{
-  margin-bottom: -60px;
+  margin-bottom: -80px;
 }
 
 /*Rep map*/
@@ -234,6 +234,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   padding: 4px 0px 0px 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -256,4 +257,13 @@ body {
   #legend {
     bottom: 50px; 
   }
+}
+
+#hello_robot{
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  border-radius: 50%; /* This makes the video elliptical */
+  object-fit: cover;
+  margin-bottom: 20px;
 }

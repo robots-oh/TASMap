@@ -70,7 +70,7 @@ const loadAndDisplayPLYSet = (set) => {
     loadPLY(ply1, (geometry) => {
         geometry.computeVertexNormals();
         const material = new THREE.PointsMaterial({
-            size: 0.01,
+            size: 0.03,
             vertexColors: true,
             transparent: true, // Enable transparency
             opacity: 1.0 // Fully opaque

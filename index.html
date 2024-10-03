@@ -33,6 +33,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/drop_down.css">
   <link rel="icon" href="./static/images/rwh.png">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -192,15 +193,18 @@
                 <span style="font-size: 1.5em;">T</span>ask-<span style="font-size: 1.5em;">A</span>ware <span style="font-size: 1.5em;">S</span>emantic <span style="font-size: 1.5em;">Map</span>
             </h2>
             <div class="container">
-                <!-- PLY viewer container -->
-                <div id="controls">
-                  <select id="ply-set-select">
-                      <option value="set1">Set 1</option>
-                      <option value="set2">Set 2</option>
-                      <!-- Add more sets as needed -->
-                  </select>
-                  <button id="toggle-ply2">Toggle PLY 2</button>
-                  <button id="top-down-view">Top-Down View</button> <!-- New button added -->
+              <!-- PLY viewer container -->
+              <div id="controls">
+                <select id="ply-set-select">
+                    <option value="set1">Map #1: Post-Cooking</option>
+                    <option value="set2">Map #2: Post-Excercise</option>
+                    <option value="set2">Map #3: Post-Excercise</option>
+                    <option value="set2">Map #4: Odorous</option>
+                    <option value="set2">Map #5: Odorous</option>
+                    <!-- Add more sets as needed -->
+                </select>
+                <button id="toggle-ply2">task-significatn vector</button>
+                <button id="top-down-view">Top-Down View</button> <!-- New button added -->
               </div>
           
               <div id="ply_viewer"></div>
@@ -297,7 +301,7 @@
         <h2 class="title is-3">TASMap Exploration</h2>
         <div class="content">
           <video controls>
-            <source src="https://github.com/robots-oh/TASMap/raw/refs/heads/main/static/videos/map_exploration.mp4" type="video/mp4">
+            <source src="./static/videos/map_exploration.mp4" type="video/mp4">
           </video>
         </div>
       </div>
@@ -343,7 +347,7 @@
           <!-- <iframe src="https://www.youtube.com/embed/eNEaDmD4cDk?si=Sv6Wvye92bTUGOAI"
                   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
           <video controls poster="static/images/thumbnail.png">
-            <source src="https://github.com/robots-oh/TASMap/raw/refs/heads/main/static/videos/ICRA_video_FHD.mp4" type="video/mp4">
+            <source src="./static/videos/ICRA_video_FHD.mp4" type="video/mp4">
           </video>
         </div>
       </div>
@@ -363,6 +367,9 @@
   year      = {2021},
 }</code></pre> -->
     Comming soon!
+
+    
+    
   </div>
 </section>
 
@@ -370,9 +377,17 @@
 <footer class="footer">
   <div class="container">
     <div class="columns is-centered">
+      <video id="hello_robot" autoplay loop muted>
+        <source src="./static/videos/hello_robot.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="columns is-centered">
       Website template borrowed from&nbsp;<a href="https://nerfies.github.io/">NeRFies</a> 
     </div>
+    
   </div>
+  
 </footer>
 
 <script src="./static/js/ply_viewer.js"></script>
