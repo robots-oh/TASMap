@@ -43,8 +43,8 @@ const loadPLY = (url, onLoad) => {
 // PLY sets
 const plySets = {
     set1: {
-        ply1: 'static/ply/pcd_shower_2a_liv.ply', // Replace with actual PLY file for set 1
-        ply2: 'static/ply/mesh_shower_2a_liv.ply'  // Replace with actual PLY file for set 1
+        ply1: 'https://github.com/robots-oh/TASMap/raw/refs/heads/main/static/ply/pcd_shower_2a_liv.ply', // Replace with actual PLY file for set 1
+        ply2: 'https://github.com/robots-oh/TASMap/raw/refs/heads/main/static/ply/mesh_shower_2a_liv.ply'  // Replace with actual PLY file for set 1
     },
     set2: {
         ply1: 'static/taskmap_scene_3.ply', 
