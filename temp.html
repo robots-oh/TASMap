@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Task-Aware Semantic Map</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/rwh.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <!-- Three.js 관련 스크립트 추가 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/PLYLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+
+<section class="hero top-banner">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Task-Aware Semantic Map: Autonomous Robot Task Assignment Beyond Commands</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://sites.google.com/view/robots-oh/members#h.tdmvlncz7z3t">Daewon Choi</a>,</span>
+            <span class="author-block">
+              <a href="javascript:void(0);"
+                   onclick="alert('hosunglee03@hanyang.ac.kr');">
+                Hosung Lee
+              </a>,</span>
+            <span class="author-block">
+              <a href="javascript:void(0);"
+                   onclick="alert('thdms1231@hanyang.ac.kr, She is looking for a BF');">
+                   Soeun Hwang</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://sites.google.com/view/robots-oh/yoonseon-oh">Yoonseon Oh</a><sup>*</sup>
+            </span>
+            <span class="author-block">
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">All authors are with Hanyang University.</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- 링크들 생략 -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop main-content">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">
+          <span style="font-size: 1.5em;">T</span>ask-<span style="font-size: 1.5em;">A</span>ware <span style="font-size: 1.5em;">S</span>emantic <span style="font-size: 1.5em;">Map</span>
+        </h2>
+        <div class="container">
+          <!-- PLY 뷰어 추가 -->
+          <div id="ply-viewer" style="width: 100%; height: 500px;"></div>
+          
+          <p>
+            <b>Task-Aware Semantic Map</b> that incorporates all entities and a task-significant vector.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+    // Three.js로 PLY 파일을 로드하고 화면에 표시하는 스크립트
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer();
+    const container = document.getElementById('ply-viewer');
+
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    container.appendChild(renderer.domElement);
+
+    camera.position.z = 2;
+
+    // OrbitControls 설정
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.25;
+    controls.enableZoom = true;
+
+    // 조명 추가
+    const ambientLight = new THREE.AmbientLight(0x404040);
+    scene.add(ambientLight);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    scene.add(directionalLight);
+
+    // PLY 파일 로드
+    const loader = new THREE.PLYLoader();
+    loader.load('path_to_your_ply_file.ply', function (geometry) {
+        geometry.computeVertexNormals();
+        const material = new THREE.MeshStandardMaterial({ color: 0x0055ff });
+        const mesh = new THREE.Mesh(geometry, material);
+        scene.add(mesh);
+    });
+
+    // 리사이즈 처리
+    window.addEventListener('resize', () => {
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+    });
+
+    // 애니메이션 루프
+    function animate() {
+        requestAnimationFrame(animate);
+        controls.update();
+        renderer.render(scene, camera);
+    }
+
+    animate();
+</script>
+
+</body>
+</html>

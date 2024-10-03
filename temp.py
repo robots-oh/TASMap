@@ -1,30 +1,28 @@
-from PIL import Image
-import cv2
+import open3d as o3d
 import numpy as np
 
-def resize_gif(input_path, output_path, size=(500, 500)):
-    # GIF 파일을 열기
-    gif = Image.open(input_path)
-    frames = []
-    
-    # 모든 프레임을 순회
-    for frame in range(gif.n_frames):
-        gif.seek(frame)
-        # 프레임을 배열로 변환하여 OpenCV에서 사용할 수 있도록 함
-        frame_image = gif.convert('RGB')
-        open_cv_image = np.array(frame_image)
-        # BGR 형식으로 변환
-        open_cv_image = open_cv_image[:, :, ::-1].copy()
-        
-        # OpenCV를 사용하여 리사이즈
-        resized_frame = cv2.resize(open_cv_image, size)
-        
-        # 리사이즈된 프레임을 PIL 이미지로 변환
-        resized_frame_image = Image.fromarray(cv2.cvtColor(resized_frame, cv2.COLOR_BGR2RGB))
-        frames.append(resized_frame_image)
-    
-    # GIF 파일로 저장
-    frames[0].save(output_path, save_all=True, append_images=frames[1:], loop=0, duration=gif.info['duration'])
+# 구의 매개변수
+radius = 1.0
+num_points = 1000
 
-# 사용 예시
-resize_gif(r'D:\workspace\difficult\git\TASMap\static\gifs\temp.gif', 'output.gif')
+# 구의 포인트 생성
+phi = np.random.uniform(0, np.pi, num_points)
+theta = np.random.uniform(0, 2 * np.pi, num_points)
+x = radius * np.sin(phi) * np.cos(theta)
+y = radius * np.sin(phi) * np.sin(theta)
+z = radius * np.cos(phi)
+
+# RGB 값 생성 (무작위)
+colors = np.random.rand(num_points, 3)
+
+# 포인트 클라우드 생성
+points = np.vstack((x, y, z)).T
+pcd = o3d.geometry.PointCloud()
+pcd.points = o3d.utility.Vector3dVector(points)
+pcd.colors = o3d.utility.Vector3dVector(colors)
+
+# 포인트 클라우드를 PLY 파일로 저장
+o3d.io.write_point_cloud("sphere_point_cloud.ply", pcd)
+
+# 포인트 클라우드 시각화 (선택 사항)
+o3d.visualization.draw_geometries([pcd])

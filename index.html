@@ -40,6 +40,12 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+  <!-- Three.js 관련 스크립트 추가 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/PLYLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
 </head>
 <body>
 
@@ -134,8 +140,7 @@
                   <span>Video</span>
                 </a>
               </span>
-              <!-- Code Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="javascript:void(0);"
                    onclick="alert('Sorry, Comming Soon');" 
                    class="external-link button is-normal is-rounded is-dark">
@@ -152,7 +157,7 @@
                    class="external-link button is-normal is-rounded is-dark">
                   <span>Additional Results</span>
                   </a>
-              </span>
+              </span> -->
               <!-- Dataset Link. -->
               <!-- <span class="link-block">
                 <a href="https://github.com/google/nerfies/releases/tag/0.1"
@@ -171,19 +176,82 @@
   </div>
 </section>
 
-<section class="first-section" style="display: flex; flex-direction: column; align-items: center;">
+<!-- <section class="first-section" style="display: flex; flex-direction: column; align-items: center;">
   <iframe title="Albertville_segmented" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/33c7f6ce618a4eb08285f20ad9419929/embed" style="max-width: 780px; width: 100%; height: 500px;"></iframe>
   <div class="container is-max-desktop rep-map-container">
       <b>Task-Aware Semantic Map</b> that incorporates all entities and a task-significant vector.
   </div>
-</section>
-
-
-
+</section> -->
 
 <section class="section">
+  <!-- TASMap exploration. -->
   <div class="container is-max-desktop main-content">
-    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+            <h2 class="title is-3">
+                <span style="font-size: 1.5em;">T</span>ask-<span style="font-size: 1.5em;">A</span>ware <span style="font-size: 1.5em;">S</span>emantic <span style="font-size: 1.5em;">Map</span>
+            </h2>
+            <div class="container">
+                <!-- PLY viewer container -->
+                <div id="controls">
+                  <select id="ply-set-select">
+                      <option value="set1">Set 1</option>
+                      <option value="set2">Set 2</option>
+                      <!-- Add more sets as needed -->
+                  </select>
+                  <button id="toggle-ply2">Toggle PLY 2</button>
+                  <button id="top-down-view">Top-Down View</button> <!-- New button added -->
+              </div>
+          
+              <div id="ply_viewer"></div>
+              <div id="legend">
+                <div class="legend-item">
+                  <div class="color-box" style="background-color: #AAA29B;"></div><span>Leave</span>
+                </div>
+                <div class="legend-item">
+                  <div class="color-box" style="background-color: #EFC892;"></div><span>Fold</span>
+                </div>
+                <div class="legend-item">
+                  <div class="color-box" style="background-color: #0B15A4;"></div><span>Mop</span>
+                </div>
+                <div class="legend-item">
+                  <div class="color-box" style="background-color: #FF8AE2;"></div><span>Dispose</span>
+                </div>
+                <div class="legend-item">
+                  <div class="color-box" style="background-color: #3BA2F9;"></div><span>Relocate</span>
+                </div>
+                <div class="legend-item">
+                  <div class="color-box" style="background-color: #EAE9F9;"></div><span>Turn off</span>
+                </div>
+                <div class="legend-item">
+                  <div class="color-box" style="background-color: #F9FB54;"></div><span>Wash</span>
+                </div>
+                <div class="legend-item">
+                  <div class="color-box" style="background-color: #9FFE4B;"></div><span>Vacuum</span>
+                </div>
+                <div class="legend-item">
+                  <div class="color-box" style="background-color: #FFAC11;"></div><span>Reorient</span>
+                </div>
+                <div class="legend-item">
+                  <div class="color-box" style="background-color: #DB3DB9;"></div><span>Wipe</span>
+                </div>
+                <div class="legend-item">
+                  <div class="color-box" style="background-color: #27C56C;"></div><span>Close</span>
+                </div>
+                <div class="legend-item">
+                  <div class="color-box" style="background-color: #AD66A6;"></div><span>Empty</span>
+                </div>
+              </div>
+                <p>
+                    <b>TASMap</b> that incorporates all entities and a task-significant vector.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <!-- Abstract. -->
+  <div class="container is-max-desktop main-content">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
@@ -204,12 +272,12 @@
     </div>
   </div>
 
-  <!-- Abstract. -->
+  <!-- Frame work -->
   <div class="container is-max-desktop main-content">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Task-Aware Semantic Map Construction</h2>
-        <div class="content has-text-justified">
+        <div class="content">
           <img src="./static/images/main_framework.png"
           class="interpolation-image"
           alt="Interpolate start reference image."/>
@@ -222,6 +290,20 @@
     </div>
   </div>
 
+  <!-- TASMap  exploration -->
+  <div class="container is-max-desktop main-content">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">TASMap Exploration</h2>
+        <div class="content">
+          <video controls>
+            <source src="/static/videos/map_exploration.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+
   
   <!-- dataset-->
   <div class="dataset-hero-body main-content">
@@ -229,28 +311,24 @@
       <h2 class="title is-3" style="text-align: center;">Dataset Generation for Simulation Evaluation</h2>
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-steve">
-          <img src="https://github.com/robots-oh/TASMap/blob/main/static/gifs/temp.gif?raw=true" alt="Description of GIF">
-          <div class="text-overlay">Disarray (1)</div>
+          <img src="https://github.com/robots-oh/TASMap/blob/main/static/gifs/cook/0c1_cook.gif?raw=true" alt="Description of GIF">
+          <div class="text-overlay">Post-Cooking #1</div>
         </div>
         <div class="item item-steve">
-          <img src="https://github.com/robots-oh/TASMap/blob/main/static/gifs/temp.gif?raw=true" alt="Description of GIF">
-          <div class="text-overlay">Disarray (2)</div>
+          <img src="https://github.com/robots-oh/TASMap/blob/main/static/gifs/cook/22c_cook.gif?raw=true" alt="Description of GIF">
+          <div class="text-overlay">Post-Cooking #2</div>
         </div>
         <div class="item item-steve">
-          <img src="https://github.com/robots-oh/TASMap/blob/main/static/gifs/temp.gif?raw=true" alt="Description of GIF">
-          <div class="text-overlay">Disarray (3)</div>
+          <img src="https://github.com/robots-oh/TASMap/blob/main/static/gifs/cook/2a7_cook.gif?raw=true" alt="Description of GIF">
+          <div class="text-overlay">Post-Cooking #3</div>
         </div>
         <div class="item item-steve">
-          <img src="https://github.com/robots-oh/TASMap/blob/main/static/gifs/temp.gif?raw=true" alt="Description of GIF">
-          <div class="text-overlay">Disarray (4)</div>
+          <img src="https://github.com/robots-oh/TASMap/blob/main/static/gifs/cook/4d8_cook.gif?raw=true" alt="Description of GIF">
+          <div class="text-overlay">Post-Cooking #4</div>
         </div>
         <div class="item item-steve">
-          <img src="https://github.com/robots-oh/TASMap/blob/main/static/gifs/temp.gif?raw=true" alt="Description of GIF">
-          <div class="text-overlay">Disarray (5)</div>
-        </div>
-        <div class="item item-steve">
-          <img src="https://github.com/robots-oh/TASMap/blob/main/static/gifs/temp.gif?raw=true" alt="Description of GIF">
-          <div class="text-overlay">Post-Cooking (1)</div>
+          <img src="https://github.com/robots-oh/TASMap/blob/main/static/gifs/cook/97c_cook.gif?raw=true" alt="Description of GIF">
+          <div class="text-overlay">Post-Cooking #5</div>
         </div>
       </div>
     </div>
@@ -262,8 +340,11 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/eNEaDmD4cDk?si=Sv6Wvye92bTUGOAI"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <!-- <iframe src="https://www.youtube.com/embed/eNEaDmD4cDk?si=Sv6Wvye92bTUGOAI"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+          <video controls poster="static/images/thumbnail.png">
+            <source src="https://github.com/robots-oh/TASMap/raw/refs/heads/main/static/videos/ICRA_video_FHD.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
     </div>
@@ -289,10 +370,12 @@
 <footer class="footer">
   <div class="container">
     <div class="columns is-centered">
-          Website template borrowed from <a href="https://nerfies.github.io/">NeRFies</a> 
+      Website template borrowed from&nbsp;<a href="https://nerfies.github.io/">NeRFies</a> 
     </div>
   </div>
 </footer>
+
+<!-- <script src="./static/js/ply_viewer.js"></script> -->
 
 </body>
 </html>

@@ -160,7 +160,11 @@ body {
 
 /*custom*/
 .main-content{
-  margin-bottom: 20px;
+  margin-bottom: 50px;
+}
+
+.top-banner{
+  margin-bottom: -60px;
 }
 
 /*Rep map*/
@@ -180,12 +184,6 @@ body {
   margin-bottom: -20px; /* 텍스트와의 간격 */
   padding: 0px 0; /* 상하 패딩 */
 }
-
-
-
-
-
-
 
 
 /*GIF list*/
@@ -212,4 +210,50 @@ body {
   /* height: 800; */
   margin: auto;
   display: block;
+  margin-bottom: 50px;
+}
+
+
+#ply_viewer {
+  width: 100%; /* Set desired width */
+  height: 600px; /* Set desired height */
+  overflow: hidden; /* Prevent overflow */
+  border:1px solid #888888;
+  position: relative; /* To position legend relative to ply_viewer */
+}
+
+#legend {
+  width: 400px;
+  height: auto;
+  background-color: white;
+  position: absolute;
+  bottom: 30px; 
+  right: 5px; 
+  z-index: 10; 
+  border:1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 4px 0px 0px 5px;
+}
+
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  width: 25%; /* Ensures 4 items per row */
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+.color-box {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  border: 1px solid black;
+}
+
+@media (max-width: 600px) {
+  #legend {
+    bottom: 50px; 
+  }
 }
