@@ -94,7 +94,7 @@ body {
     width: 100%;
     height: 0;
     padding-bottom: 56.25%;
-
+    margin-bottom: 5px;
     overflow: hidden;
     border-radius: 10px !important;
 }
@@ -140,9 +140,6 @@ body {
 
 
 
-.interpolation-video-column {
-}
-
 .interpolation-panel .slider {
   margin: 0 !important;
 }
@@ -181,15 +178,26 @@ body {
   float: right; /* 이미지를 왼쪽에 정렬 */
   width: 50%; /* 이미지 너비 */
   margin-left: 10px; /* 텍스트와의 간격 */
-  margin-bottom: -20px; /* 텍스트와의 간격 */
+  margin-bottom: -00px; /* 텍스트와의 간격 */
   padding: 0px 0; /* 상하 패딩 */
 }
-
+.image-center {
+  width: 60%;
+  display: flex;
+  justify-content: center; /* 이미지를 가로축으로 중앙 정렬 */
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
 
 /*GIF list*/
 .item-steve {
   position: relative;
   text-align: center;
+}
+
+.item-steve img:hover{
+  border: 2px solid black;
+  cursor: pointer;
 }
 
 .text-overlay {
@@ -202,16 +210,10 @@ body {
   padding: 5px;
   font-size: 16px; /* 큰 글자 크기 */
   text-shadow: 1px 1px 2px black; /* 검은색 그림자 */
+  z-index: 200;
 }
 
-.dataset-hero-body{
-  max-width: 780px;
-  width: 100%;
-  /* height: 800; */
-  margin: auto;
-  display: block;
-  margin-bottom: 50px;
-}
+
 
 
 #ply_viewer {
@@ -227,14 +229,15 @@ body {
   height: auto;
   background-color: white;
   position: absolute;
-  bottom: 30px; 
-  right: 5px; 
+  bottom: 8px; 
+  right: 7px; 
   z-index: 10; 
   border:1px solid black;
   display: flex;
   flex-wrap: wrap;
   padding: 4px 0px 0px 5px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10; 
 }
 
 
@@ -267,3 +270,101 @@ body {
   object-fit: cover;
   margin-bottom: 20px;
 }
+
+.abstract_section{
+  background-color: #F5F5F5;
+}
+
+.title-centered{
+  text-align: center;
+}
+
+/* Modal (background) */
+.modal {
+  display: none; 
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  z-index: 100; 
+}
+
+/* Modal Content */
+.modal-content {
+  width: 80%; /* Adjust modal width */
+  margin: 12% auto; /* Center modal on page */
+  padding: 20px;
+  text-align: center; /* Center text and images */
+  background-color: #fff; /* Set background color */
+  border-radius: 8px; /* Round corners */
+}
+
+
+.gif-container {
+  display: flex; /* Use flexbox layout */
+  justify-content: space-around; /* Space images evenly */
+  align-items: center; /* Center items vertically */
+  overflow-x: auto; /* Allow horizontal scrolling if needed */
+  margin-bottom: 20px; /* Space below GIFs */
+}
+
+.modal-gif-name {
+  position: absolute; /* Position absolutely within the relative container */
+  bottom: 0; /* Align at the bottom of the container */
+  left: 0; /* Start from the left edge of the container */
+  width: 100%; /* Stretch across the entire container width */
+  background-color: rgba(255, 255, 255, 0); /* Semi-transparent black background */
+  color: white; /* White text */
+  padding: 5px; /* Padding around text */
+  font-size: 12px; /* Font size */
+  text-shadow: 1px 1px 2px black; /* Text shadow for better visibility */
+  text-align: center; /* Center text horizontally */
+}
+
+
+.modal-content h2 {
+  font-size: 24px; /* h2의 폰트 크기 조정 */
+  font-weight: bold;
+  color: #333; /* 색상 선택 가능 */
+  margin-bottom: 15px; /* h2와 다른 요소 사이의 여백 */
+}
+
+.gif-item-container {
+  position: relative; /* Needed to position the label absolutely within this container */
+  width: 19%; /* Control the width of each GIF container */
+  height: auto; /* Height will adjust to content */
+  margin: 10px; /* Space between GIF containers */
+  display: inline-block; /* Line up GIF containers horizontally */
+  border-radius: 300px;
+}
+
+
+.modal-content p {
+  font-size: 16px; /* 내용의 폰트 크기 조정 */
+}
+
+.modal-image {
+  width: 30%; /* Set width of the main image */
+  margin-bottom: 5px; /* Margin below the main image */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+

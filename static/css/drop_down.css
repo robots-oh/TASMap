@@ -3,18 +3,19 @@
   width: 100%;
 }
 
-
-/* Custom dropdown style */
+/* Custom dropdown style with down arrow */
 #ply-set-select {
+  font-size: 20px;
   width: 100%;
   padding: 15px;
+  padding-right: 50px; /* 화살표 이미지에 대한 공간 확보 */
   border: 1px solid #ddd;
   border-radius: 8px;
   background-color: white;
   appearance: none;
-  background-image: url('data:image/svg+xml;base64,...'); /* Add your down arrow icon */
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgdmlld0JveD0iMCAwIDEwIDYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik01IDZMOS40MjkgMEgwLjU3MDcxTDUgNloiIGZpbGw9IiMzMzMzMzMiLz4KPC9zdmc+Cg=='); /* SVG 화살표 추가 */
   background-repeat: no-repeat;
-  background-position: right 10px center;
+  background-position: right 15px center; /* 화살표 위치 조정 */
   font-size: 16px;
   color: #333;
   cursor: pointer;
@@ -27,6 +28,10 @@
   font-size: 16px;
 }
 
+#ply-set-select:hover {
+  border: 1px solid #888888;
+  font-weight: bold; /* 폰트 굵게 적용 */
+}
 /* Custom Button Styles */
 button {
   width: 100%;
@@ -51,9 +56,10 @@ button:active {
   background-color: #003d99;
 }
 
-/* Additional style for specific buttons if needed */
+/* Additional style for specific buttons */
 #toggle-ply2 {
   background-color: #ff007a;
+  font-size: 20px;
 }
 
 #toggle-ply2:hover {
@@ -68,6 +74,7 @@ button:active {
 #top-down-view {
   background-color: #00cc99;
   margin-bottom: 10px;
+  font-size: 20px;
 }
 
 #top-down-view:hover {
@@ -77,32 +84,3 @@ button:active {
 #top-down-view:active {
   background-color: #009973;
 }
-
-/* Custom dropdown styling with media icons */
-#ply-set-select {
-  position: relative;
-  background-image: none;
-  padding-left: 50px;
-}
-
-#ply-set-select:before {
-  content: '';
-  position: absolute;
-  left: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  background-image: url('data:image/svg+xml;base64,...'); /* Add custom media icon */
-  background-size: 30px 30px;
-  width: 30px;
-  height: 30px;
-  background-repeat: no-repeat;
-}
-
-#ply-set-select:hover {
-  border: 1px solid #888888;
-  font-weight: bold;
-}
-#ply-set-select:active {
-  border: 1px solid #888888;
-}
-

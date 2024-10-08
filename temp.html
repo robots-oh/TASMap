@@ -6,157 +6,168 @@
         content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
   <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>Task-Aware Semantic Map</title>
-
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-
     function gtag() {
       dataLayer.push(arguments);
     }
-
     gtag('js', new Date());
-
     gtag('config', 'G-PYVRSFMDRL');
   </script>
-
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
-
+  <!-- Fonts and CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/drop_down.css">
   <link rel="icon" href="./static/images/rwh.png">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
-
-  <!-- Three.js 관련 스크립트 추가 -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/PLYLoader.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 </head>
 <body>
+<section>
 
-<section class="hero top-banner">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Task-Aware Semantic Map: Autonomous Robot Task Assignment Beyond Commands</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://sites.google.com/view/robots-oh/members#h.tdmvlncz7z3t">Daewon Choi</a>,</span>
-            <span class="author-block">
-              <a href="javascript:void(0);"
-                   onclick="alert('hosunglee03@hanyang.ac.kr');">
-                Hosung Lee
-              </a>,</span>
-            <span class="author-block">
-              <a href="javascript:void(0);"
-                   onclick="alert('thdms1231@hanyang.ac.kr, She is looking for a BF');">
-                   Soeun Hwang</a>,
-            </span>
-            <span class="author-block">
-              <a href="https://sites.google.com/view/robots-oh/yoonseon-oh">Yoonseon Oh</a><sup>*</sup>
-            </span>
-            <span class="author-block">
+  <div class="dataset-hero-body main-content">
+    <div class="container">
+        <h2 class="title is-3" style="text-align: center;">Dataset Generation for Simulation Evaluation</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-steve">
+            <img src="https://github.com/robots-oh/TASMap/blob/main/static/gifs/cook/0c1_cook.gif?raw=true"
+                 alt="Description of GIF"
+                 class="clickable-image"
+                 data-title="Post-Cooking"
+                 data-info="Task distribution of Post-cooking"
+                 data-image-url="./static/images/post_cooking_dist.png">
+            <div class="text-overlay">Post-Cooking</div>
           </div>
-
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">All authors are with Hanyang University.</span>
+          <div class="item item-steve">
+            <img src="https://github.com/robots-oh/TASMap/blob/main/static/gifs/homegym/22c_homegym.gif?raw=true"
+                 alt="Description of GIF"
+                 class="clickable-image"
+                 data-title="Homegym"
+                 data-info="2222222222222222222222222222"
+                 data-image-url="https://example.com/path/to/detail-image1.jpg">
+            <div class="text-overlay">Homegym</div>
           </div>
-
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- 링크들 생략 -->
-            </div>
-
+          <div class="item item-steve">
+            <img src="https://github.com/robots-oh/TASMap/blob/main/static/gifs/PRRT/2a7_PRRT.gif?raw=true"
+                 alt="Description of GIF"
+                 class="clickable-image"
+                 data-title="PRRT"
+                 data-info="333333333333333333333333333"
+                 data-image-url="https://example.com/path/to/detail-image1.jpg">
+            <div class="text-overlay">PRRT</div>
+          </div>
+          <div class="item item-steve">
+            <img src="https://github.com/robots-oh/TASMap/blob/main/static/gifs/shower/4d8_shower.gif?raw=true"
+                 alt="Description of GIF"
+                 class="clickable-image"
+                 data-title="Shower"
+                 data-info="444444444444444444444444444444"
+                 data-image-url="https://example.com/path/to/detail-image1.jpg">
+            <div class="text-overlay">Shower</div>
+          </div>
+          <div class="item item-steve">
+            <img src="https://github.com/robots-oh/TASMap/blob/main/static/gifs/stinky/97c_stinky.gif?raw=true"
+                 alt="Description of GIF"
+                 class="clickable-image"
+                 data-title="Stinky"
+                 data-info="55555555555555555555"
+                 data-image-url="https://example.com/path/to/detail-image1.jpg">
+            <div class="text-overlay">Stinky</div>
+          </div>
+          <div class="item item-steve">
+            <img src="https://github.com/robots-oh/TASMap/blob/main/static/gifs/WVMD/97c_WVMD.gif?raw=true"
+                 alt="Description of GIF"
+                 class="clickable-image"
+                 data-title="WVMD"
+                 data-info="56666666666666666666666666666666666"
+                 data-image-url="https://example.com/path/to/detail-image1.jpg">
+            <div class="text-overlay">WVMD</div>
           </div>
         </div>
-      </div>
+        <p>
+          To evaluate the performance of TASMap, we produce a new dataset to simulate realistically cluttered residential environments using OmniGibson simulator. 
+          Five discrete house samples from the 3D-FRONT dataset are selected to ensure that the dataset covers various room types and sizes. We artificially place objects, dust, and liquids using objects in BEHAVIOR-1K to create a cluttered environments. 
+          We construct a total of 35 houses, each consisting of 5 to 7 rooms. These houses are populated with a diverse array of objects, categorized into over 200 types.
+          Each house is designed to reflect a specific concept.
+          For instance, houses with the 'Post-Cooking' concept predominantly contain tasks such as <span style="font-family: monospace;">Wash</span>, <span style="font-family: monospace;">Wipe</span>, and <span style="font-family: monospace;">Vacuum</span>,
+          while the 'Post-Shower' concept houses primarily include tasks like <span style="font-family: monospace;">Mop</span> and <span style="font-family: monospace;">Relocate</span>.
+          Other concepts, such as 'Post-Exercise', 'Odorous' and 'Laundry-Filled', are also included. 
+        </p>
     </div>
   </div>
-</section>
 
-<section class="section">
-  <div class="container is-max-desktop main-content">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">
-          <span style="font-size: 1.5em;">T</span>ask-<span style="font-size: 1.5em;">A</span>ware <span style="font-size: 1.5em;">S</span>emantic <span style="font-size: 1.5em;">Map</span>
-        </h2>
-        <div class="container">
-          <!-- PLY 뷰어 추가 -->
-          <div id="ply-viewer" style="width: 100%; height: 500px;"></div>
-          
-          <p>
-            <b>Task-Aware Semantic Map</b> that incorporates all entities and a task-significant vector.
-          </p>
-        </div>
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Title</h2>
+      <!-- GIFs container -->
+      <div class="gif-container">
+        <img src="path_to_gif_1.gif" alt="GIF 1">
+        <img src="path_to_gif_2.gif" alt="GIF 2">
+        <img src="path_to_gif_3.gif" alt="GIF 3">
+        <img src="path_to_gif_4.gif" alt="GIF 4">
+        <img src="path_to_gif_5.gif" alt="GIF 5">
       </div>
+      <!-- Main image -->
+      <img src="" alt="Modal Image" class="modal-image"> <!-- 이미지 태그 추가 -->
+      <p>Some text in the Modal...</p>
     </div>
-  </div>
+</div>
+  
 </section>
+<!-- jQuery and JavaScript Files -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script defer src="./static/js/fontawesome.all.min.js"></script>
+<script src="./static/js/bulma-carousel.min.js"></script>
+<script src="./static/js/bulma-slider.min.js"></script>
+<script src="./static/js/index.js"></script>
+<!-- Three.js 관련 스크립트 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/PLYLoader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 
 <script>
-    // Three.js로 PLY 파일을 로드하고 화면에 표시하는 스크립트
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer();
-    const container = document.getElementById('ply-viewer');
+  var modal = document.getElementById("myModal");
 
-    renderer.setSize(container.clientWidth, container.clientHeight);
-    container.appendChild(renderer.domElement);
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
 
-    camera.position.z = 2;
+  // When the user clicks the button, open the modal 
+  $('.clickable-image').click(function() {
+  var infoTitle = $(this).data('title'); // 이미지의 data-info 속성 값을 가져옵니다.
+  var infoText = $(this).data('info'); // 이미지의 data-info 속성 값을 가져옵니다.
+  var imageUrl = $(this).data('image-url'); // 이미지의 data-image-url 속성 값을 가져옵니다.
+  
+  $('.modal-content h2').text(infoTitle); // 모달의 p 태그 내용을 업데이트합니다.
+  $('.modal-content p').text(infoText); // 모달의 p 태그 내용을 업데이트합니다.
+  $('.modal-image').attr('src', imageUrl); // 모달의 img 태그의 src 속성을 업데이트합니다.
+  modal.style.display = "block"; // 모달을 표시합니다.
+  });
 
-    // OrbitControls 설정
-    const controls = new THREE.OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true;
-    controls.dampingFactor = 0.25;
-    controls.enableZoom = true;
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
 
-    // 조명 추가
-    const ambientLight = new THREE.AmbientLight(0x404040);
-    scene.add(ambientLight);
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-    scene.add(directionalLight);
-
-    // PLY 파일 로드
-    const loader = new THREE.PLYLoader();
-    loader.load('path_to_your_ply_file.ply', function (geometry) {
-        geometry.computeVertexNormals();
-        const material = new THREE.MeshStandardMaterial({ color: 0x0055ff });
-        const mesh = new THREE.Mesh(geometry, material);
-        scene.add(mesh);
-    });
-
-    // 리사이즈 처리
-    window.addEventListener('resize', () => {
-        renderer.setSize(container.clientWidth, container.clientHeight);
-        camera.aspect = container.clientWidth / container.clientHeight;
-        camera.updateProjectionMatrix();
-    });
-
-    // 애니메이션 루프
-    function animate() {
-        requestAnimationFrame(animate);
-        controls.update();
-        renderer.render(scene, camera);
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
     }
+  }
 
-    animate();
+  document.onkeydown = function(event) {
+    if (event.key === "Escape") { // Check if the key pressed is the Escape key
+      modal.style.display = "none";
+    }
+  }
 </script>
 
 </body>

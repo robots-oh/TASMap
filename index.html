@@ -160,14 +160,15 @@
                   </a>
               </span> -->
               <!-- Dataset Link. -->
-              <!-- <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+              <span class="link-block">
+                <a href="javascript:void(0);"
+                   onclick="alert('Sorry, Comming Soon');" 
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
                   </span>
                   <span>Data</span>
-                  </a> -->
+                </a>
             </div>
 
           </div>
@@ -185,13 +186,123 @@
 </section> -->
 
 <section class="section">
-  <!-- TASMap exploration. -->
+
+  <!-- Paper video. -->
   <div class="container is-max-desktop main-content">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="publication-video">
+          <!-- <iframe src="https://www.youtube.com/embed/eNEaDmD4cDk?si=Sv6Wvye92bTUGOAI"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+          <video controls poster="static/images/thumbnail.png">
+            <source src="https://github.com/robots-oh/TASMap/raw/refs/heads/main/static/videos/ICRA_video_FHD.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p>
+          어떠한 비디오인지에  대한 설명
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+  
+<section class="abstract_section">
+  <!-- Abstract. -->
+    <div class="container is-max-desktop main-content">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3 title-centered">Abstract</h2>
+          <div class="container">
+            <div class="image-center">
+              <img src="./static/images/representative_figure_no_back.png"
+              alt="Task-Aware Semantic Map"
+              class="representative-image">
+            </div>
+            <p>
+              With recent advancements in Large Language Models, task planning methods that interpret human commands have garnered significant attention. However, as home robots become more common, specifying every daily task could become impractical. This paper introduces a novel semantic map called the Task-Aware Semantic Map (TASMap), which enables robots to autonomously assign and propose necessary tasks in a scene without explicit human commands. The core innovation of this approach is the ability of TASMap to comprehend the context of objects within a scene and autonomously generate task proposals. This capability significantly advances autonomous robotic assistance, reducing the dependency on specific commands and enhancing interaction with environments.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <!-- Frame work -->
+  <div class="container main-content">
+    <div class="columns is-centered has-text-justified">
+      <div class="column is-full-width">
+        <h2 class="title is-3 title-centered">Task-Aware Semantic Map Construction</h2>
+        <div class="content">
+          <img src="./static/images/main_framework.png"
+          class="interpolation-image"
+          alt="Interpolate start reference image."/>
+          <p>
+            Overview of the proposed framework. In the task generation module, egocentric RGB images serve as inputs to associate tasks with each object present in the image. Inputs such as depth and camera pose are used during the semantic fusion module, where the results from task generation are combined with the object entities to create a TASMap. On the right, the object entities are represented as blue spheres with bar graphs indicating the task-significant vector
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TASMap  exploration -->
+  <div class="container main-content">
     <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
+        <div class="column is-full-width">
             <h2 class="title is-3">
-                <span style="font-size: 1.5em;">T</span>ask-<span style="font-size: 1.5em;">A</span>ware <span style="font-size: 1.5em;">S</span>emantic <span style="font-size: 1.5em;">Map</span>
+                <span style="font-size: 1.2em;">T</span>ask-<span style="font-size: 1.2em;">A</span>ware <span style="font-size: 1.2em;">S</span>emantic <span style="font-size: 1.2em;">M</span>ap
             </h2>
+            <p>
+              어떤 내용의 영상인지 설명하기
+            </p>
+            <div class="content">
+                <!-- Columns container for videos -->
+                <div class="columns">
+                    <!-- Each video in a third of the column -->
+                    <div class="column is-one-third">
+                        <video controls style="width:100%;">
+                            <source src="https://github.com/robots-oh/TASMap/raw/refs/heads/main/static/videos/map_exploration.mp4" type="video/mp4">
+                        </video>
+                        <p>
+                          Scene Name(TO DO)
+                        </p>
+                    </div>
+                    <div class="column is-one-third">
+                        <video controls style="width:100%;">
+                            <source src="https://github.com/robots-oh/TASMap/raw/refs/heads/main/static/videos/map_exploration.mp4" type="video/mp4">
+                        </video>
+                        <p>
+                          Scene Name(TO DO)
+                        </p>
+                    </div>
+                    <div class="column is-one-third">
+                        <video controls style="width:100%;">
+                            <source src="https://github.com/robots-oh/TASMap/raw/refs/heads/main/static/videos/map_exploration.mp4" type="video/mp4">
+                        </video>
+                        <p>
+                          Scene Name(TO DO)
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+  <!-- PLY viewer. -->
+  <div class="container main-content">
+    <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3 title-centered">TASMap Explorer</h2>
+          
+          <p style="margin-bottom: 10px;">
+            Every time the <span style="background-color: #ff007a; color: white; padding:1px 5px 1px 5px">task-significant vector</span> button is pressed, the task-significant vector in the Map alternates between an on and off state. Every time the <span style="background-color: #00cc99; color: white; padding:1px 5px 1px 5px">Top-down View</span> button is pressed, you can view the map in a Top-down view.</br>
+            <span class="tag">Control</span>: <span class="tag">Click + Drag = Rotate</span> <span class="tag">Ctrl + Drag = Translate</span> <span class="tag">Scroll Up/Down = Zoom In/Out</span>
+          </p>
+
             <div class="container">
               <!-- PLY viewer container -->
               <div id="controls">
@@ -203,8 +314,8 @@
                     <option value="set2">Map #5: Odorous</option>
                     <!-- Add more sets as needed -->
                 </select>
-                <button id="toggle-ply2">task-significatn vector</button>
-                <button id="top-down-view">Top-Down View</button> <!-- New button added -->
+                <button id="toggle-ply2">task-significant vector</button>
+                <button id="top-down-view">Top-down view</button> <!-- New button added -->
               </div>
           
               <div id="ply_viewer"></div>
@@ -246,115 +357,159 @@
                   <div class="color-box" style="background-color: #AD66A6;"></div><span>Empty</span>
                 </div>
               </div>
-                <p>
-                    <b>TASMap</b> that incorporates all entities and a task-significant vector.
-                </p>
             </div>
         </div>
     </div>
-</div>
-
-  <!-- Abstract. -->
-  <div class="container is-max-desktop main-content">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="container">
-          <div class="rep-text-content">
-            <p>
-              <!-- 이미지 삽입 위치 -->
-              <div class="rep-image-container">
-                <img src="./static/images/representative_figure_page-0001.jpg"
-                     alt="Task-Aware Semantic Map"
-                     class="interpolation-image">
-              </div>
-              With recent advancements in Large Language Models, task planning methods that interpret human commands have garnered significant attention. However, as home robots become more common, specifying every daily task could become impractical. This paper introduces a novel semantic map called the Task-Aware Semantic Map (TASMap), which enables robots to autonomously assign and propose necessary tasks in a scene without explicit human commands. The core innovation of this approach is the ability of TASMap to comprehend the context of objects within a scene and autonomously generate task proposals. This capability significantly advances autonomous robotic assistance, reducing the dependency on specific commands and enhancing interaction with environments.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
-
-  <!-- Frame work -->
-  <div class="container is-max-desktop main-content">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Task-Aware Semantic Map Construction</h2>
-        <div class="content">
-          <img src="./static/images/main_framework.png"
-          class="interpolation-image"
-          alt="Interpolate start reference image."/>
-          <p>
-            Overview of the Task-Aware Semantic Map.
-            In the task generation module, egocentric RGB images serve as inputs to associate tasks with each object present in the image.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- TASMap  exploration -->
-  <div class="container is-max-desktop main-content">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">TASMap Exploration</h2>
-        <div class="content">
-          <video controls style="width:70%;">
-            <source src="https://github.com/robots-oh/TASMap/raw/refs/heads/main/static/videos/map_exploration.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-
   
   <!-- dataset-->
   <div class="dataset-hero-body main-content">
     <div class="container">
-      <h2 class="title is-3" style="text-align: center;">Dataset Generation for Simulation Evaluation</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <img src="https://github.com/robots-oh/TASMap/blob/main/static/gifs/cook/0c1_cook.gif?raw=true" alt="Description of GIF">
-          <div class="text-overlay">Post-Cooking #1</div>
+        <h2 class="title is-3" style="text-align: center;">Dataset Generation for Simulation Evaluation</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-steve">
+            <img src="https://github.com/robots-oh/TASMap/blob/main/static/gifs/cook/0c1_cook.gif?raw=true"
+                 alt="Description of GIF"
+                 class="clickable-image"
+                 data-title="Task distribution of Post-Cooking"
+                 data-gif_url_1="https://github.com/robots-oh/TASMap/blob/main/static/gifs/cook/0c1_cook.gif?raw=true"
+                 data-gif_url_2="https://github.com/robots-oh/TASMap/blob/main/static/gifs/cook/22c_cook.gif?raw=true"
+                 data-gif_url_3="https://github.com/robots-oh/TASMap/blob/main/static/gifs/cook/2a7_cook.gif?raw=true"
+                 data-gif_url_4="https://github.com/robots-oh/TASMap/blob/main/static/gifs/cook/4d8_cook.gif?raw=true"
+                 data-gif_url_5="https://github.com/robots-oh/TASMap/blob/main/static/gifs/cook/97c_cook.gif?raw=true"
+                 data-image-url="./static/images/post_cooking_dist.png">
+            <div class="text-overlay">Post-Cooking</div>
+          </div>
+          <div class="item item-steve">
+            <img src="https://github.com/robots-oh/TASMap/blob/main/static/gifs/homegym/22c_homegym.gif?raw=true"
+                 alt="Description of GIF"
+                 class="clickable-image"
+                 data-title="Task distribution of Post-Exercise"
+                 data-gif_url_1="https://github.com/robots-oh/TASMap/blob/main/static/gifs/homegym/0c1_homegym.gif?raw=true"
+                 data-gif_url_2="https://github.com/robots-oh/TASMap/blob/main/static/gifs/homegym/22c_homegym.gif?raw=true"
+                 data-gif_url_3="https://github.com/robots-oh/TASMap/blob/main/static/gifs/homegym/2a7_homegym.gif?raw=true"
+                 data-gif_url_4="https://github.com/robots-oh/TASMap/blob/main/static/gifs/homegym/4d8_homegym.gif?raw=true"
+                 data-gif_url_5="https://github.com/robots-oh/TASMap/blob/main/static/gifs/homegym/97c_homegym.gif?raw=true"
+                 data-image-url="./static/images/post_exercise_dist.png">
+            <div class="text-overlay">Post-Exercise</div>
+          </div>
+          <div class="item item-steve">
+            <img src="https://github.com/robots-oh/TASMap/blob/main/static/gifs/PRRT/2a7_PRRT.gif?raw=true"
+                 alt="Description of GIF"
+                 class="clickable-image"
+                 data-title="Task distribution of Disarray"
+                 data-gif_url_1="https://github.com/robots-oh/TASMap/blob/main/static/gifs/PRRT/0c1_PRRT.gif?raw=true"
+                 data-gif_url_2="https://github.com/robots-oh/TASMap/blob/main/static/gifs/PRRT/22c_PRRT.gif?raw=true"
+                 data-gif_url_3="https://github.com/robots-oh/TASMap/blob/main/static/gifs/PRRT/2a7_PRRT.gif?raw=true"
+                 data-gif_url_4="https://github.com/robots-oh/TASMap/blob/main/static/gifs/PRRT/4d8_PRRT.gif?raw=true"
+                 data-gif_url_5="https://github.com/robots-oh/TASMap/blob/main/static/gifs/PRRT/97c_PRRT.gif?raw=true"
+                 data-image-url="./static/images/disarray_dist.png">
+            <div class="text-overlay">Disarray</div>
+          </div>
+          <div class="item item-steve">
+            <img src="https://github.com/robots-oh/TASMap/blob/main/static/gifs/shower/4d8_shower.gif?raw=true"
+                 alt="Description of GIF"
+                 class="clickable-image"
+                 data-title="Task distribution of Post-Shower"
+                 data-gif_url_1="https://github.com/robots-oh/TASMap/blob/main/static/gifs/shower/0c1_shower.gif?raw=true"
+                 data-gif_url_2="https://github.com/robots-oh/TASMap/blob/main/static/gifs/shower/22c_shower.gif?raw=true"
+                 data-gif_url_3="https://github.com/robots-oh/TASMap/blob/main/static/gifs/shower/2a7_shower.gif?raw=true"
+                 data-gif_url_4="https://github.com/robots-oh/TASMap/blob/main/static/gifs/shower/4d8_shower.gif?raw=true"
+                 data-gif_url_5="https://github.com/robots-oh/TASMap/blob/main/static/gifs/shower/97c_shower.gif?raw=true"
+                 data-image-url="./static/images/post_shower_dist.png">
+            <div class="text-overlay">Post-Shower</div>
+          </div>
+          <div class="item item-steve">
+            <img src="https://github.com/robots-oh/TASMap/blob/main/static/gifs/stinky/97c_stinky.gif?raw=true"
+                 alt="Description of GIF"
+                 class="clickable-image"
+                 data-title="Task distribution of Odorous"
+                 data-gif_url_1="https://github.com/robots-oh/TASMap/blob/main/static/gifs/stinky/0c1_stinky.gif?raw=true"
+                 data-gif_url_2="https://github.com/robots-oh/TASMap/blob/main/static/gifs/stinky/22c_stinky.gif?raw=true"
+                 data-gif_url_3="https://github.com/robots-oh/TASMap/blob/main/static/gifs/stinky/2a7_stinky.gif?raw=true"
+                 data-gif_url_4="https://github.com/robots-oh/TASMap/blob/main/static/gifs/stinky/4d8_stinky.gif?raw=true"
+                 data-gif_url_5="https://github.com/robots-oh/TASMap/blob/main/static/gifs/stinky/97c_stinky.gif?raw=true"
+                 data-image-url="./static/images/odorous_dist.png">
+            <div class="text-overlay">Odorous</div>
+          </div>
+          <div class="item item-steve">
+            <img src="https://github.com/robots-oh/TASMap/blob/main/static/gifs/WVMD/97c_WVMD.gif?raw=true"
+                 alt="Description of GIF"
+                 class="clickable-image"
+                 data-title="Task distribution of Sanitation"
+                 data-gif_url_1="https://github.com/robots-oh/TASMap/blob/main/static/gifs/WVMD/0c1_WVMD.gif?raw=true"
+                 data-gif_url_2="https://github.com/robots-oh/TASMap/blob/main/static/gifs/WVMD/22c_WVMD.gif?raw=true"
+                 data-gif_url_3="https://github.com/robots-oh/TASMap/blob/main/static/gifs/WVMD/2a7_WVMD.gif?raw=true"
+                 data-gif_url_4="https://github.com/robots-oh/TASMap/blob/main/static/gifs/WVMD/4d8_WVMD.gif?raw=true"
+                 data-gif_url_5="https://github.com/robots-oh/TASMap/blob/main/static/gifs/WVMD/97c_WVMD.gif?raw=true"
+                 data-image-url="./static/images/santitation_dist.png">
+            <div class="text-overlay">Sanitation</div>
+          </div>
+          <div class="item item-steve">
+            <img src="https://github.com/robots-oh/TASMap/blob/main/static/gifs/stinky/22c_stinky.gif?raw=true"
+                 alt="Description of GIF"
+                 class="clickable-image"
+                 data-title="Task distribution of Laundry-Filled"
+                 data-gif_url_1="https://github.com/robots-oh/TASMap/blob/main/static/gifs/stinky/0c1_stinky.gif?raw=true"
+                 data-gif_url_2="https://github.com/robots-oh/TASMap/blob/main/static/gifs/stinky/22c_stinky.gif?raw=true"
+                 data-gif_url_3="https://github.com/robots-oh/TASMap/blob/main/static/gifs/stinky/2a7_stinky.gif?raw=true"
+                 data-gif_url_4="https://github.com/robots-oh/TASMap/blob/main/static/gifs/stinky/4d8_stinky.gif?raw=true"
+                 data-gif_url_5="https://github.com/robots-oh/TASMap/blob/main/static/gifs/stinky/97c_stinky.gif?raw=true"
+                 data-image-url="./static/images/laundry_dist.png">
+            <div class="text-overlay">Laundry-Filled</div>
+          </div>
         </div>
-        <div class="item item-steve">
-          <img src="https://github.com/robots-oh/TASMap/blob/main/static/gifs/cook/22c_cook.gif?raw=true" alt="Description of GIF">
-          <div class="text-overlay">Post-Cooking #2</div>
-        </div>
-        <div class="item item-steve">
-          <img src="https://github.com/robots-oh/TASMap/blob/main/static/gifs/cook/2a7_cook.gif?raw=true" alt="Description of GIF">
-          <div class="text-overlay">Post-Cooking #3</div>
-        </div>
-        <div class="item item-steve">
-          <img src="https://github.com/robots-oh/TASMap/blob/main/static/gifs/cook/4d8_cook.gif?raw=true" alt="Description of GIF">
-          <div class="text-overlay">Post-Cooking #4</div>
-        </div>
-        <div class="item item-steve">
-          <img src="https://github.com/robots-oh/TASMap/blob/main/static/gifs/cook/97c_cook.gif?raw=true" alt="Description of GIF">
-          <div class="text-overlay">Post-Cooking #5</div>
-        </div>
-      </div>
+        <p>
+          To evaluate the performance of TASMap, we produce a new dataset to simulate realistically cluttered residential environments using OmniGibson simulator. 
+          Five discrete house samples from the 3D-FRONT dataset are selected to ensure that the dataset covers various room types and sizes. We artificially place objects, dust, and liquids using objects in BEHAVIOR-1K to create a cluttered environments. 
+          We construct a total of 35 houses, each consisting of 5 to 7 rooms. These houses are populated with a diverse array of objects, categorized into over 200 types.
+          Each house is designed to reflect a specific concept.
+          For instance, houses with the 'Post-Cooking' concept predominantly contain tasks such as <span style="font-family: monospace;">Wash</span>, <span style="font-family: monospace;">Wipe</span>, and <span style="font-family: monospace;">Vacuum</span>,
+          while the 'Post-Shower' concept houses primarily include tasks like <span style="font-family: monospace;">Mop</span> and <span style="font-family: monospace;">Relocate</span>.
+          Other concepts, such as 'Post-Exercise', 'Odorous' and 'Laundry-Filled', are also included. 
+        </p>
     </div>
   </div>
 
-  <!-- Paper video. -->
-  <div class="container is-max-desktop main-content">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <!-- <iframe src="https://www.youtube.com/embed/eNEaDmD4cDk?si=Sv6Wvye92bTUGOAI"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
-          <video controls poster="static/images/thumbnail.png">
-            <source src="https://github.com/robots-oh/TASMap/raw/refs/heads/main/static/videos/ICRA_video_FHD.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
+  
 </section>
 
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Title</h2>
+    <!-- GIFs container -->
+    <div class="gif-container">
+      <img src="" alt="Modal Image" class="modal-image">
+      
+      <div class="gif-item-container">
+        <img src="path_to_gif_1.gif" alt="GIF 1" id="gif_1">
+        <p class='modal-gif-name'>House #1</p>
+      </div>
+
+      <div class="gif-item-container">
+        <img src="path_to_gif_2.gif" alt="GIF 2" id="gif_2">
+        <p class='modal-gif-name'>House #2</p>
+      </div>
+
+      <div class="gif-item-container">
+        <img src="path_to_gif_3.gif" alt="GIF 3" id="gif_3">
+        <p class='modal-gif-name'>House #3</p>
+      </div>
+
+      <div class="gif-item-container">
+        <img src="path_to_gif_4.gif" alt="GIF 4" id="gif_4">
+        <p class='modal-gif-name'>House #4</p>
+      </div>
+
+      <div class="gif-item-container">
+        <img src="path_to_gif_5.gif" alt="GIF 5" id="gif_5">
+        <p class='modal-gif-name'>House #5</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <section class="section" id="BibTeX">
@@ -385,12 +540,56 @@
     <div class="columns is-centered">
       Website template borrowed from&nbsp;<a href="https://nerfies.github.io/">NeRFies</a> 
     </div>
-    
   </div>
-  
 </footer>
 
 <script src="./static/js/ply_viewer.js"></script>
+
+<script>
+  var modal = document.getElementById("myModal");
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks the button, open the modal 
+  $('.clickable-image').click(function() {
+  var infoTitle = $(this).data('title'); // 이미지의 data-info 속성 값을 가져옵니다.
+  var imageUrl = $(this).data('image-url'); // 이미지의 data-image-url 속성 값을 가져옵니다.
+  var gifUrl_1 = $(this).data('gif_url_1')
+  var gifUrl_2 = $(this).data('gif_url_2')
+  var gifUrl_3 = $(this).data('gif_url_3')
+  var gifUrl_4 = $(this).data('gif_url_4')
+  var gifUrl_5 = $(this).data('gif_url_5')
+
+
+  $('.modal-content h2').text(infoTitle); 
+  $('.modal-image').attr('src', imageUrl);
+  $('#gif_1').attr('src', gifUrl_1);
+  $('#gif_2').attr('src', gifUrl_2);
+  $('#gif_3').attr('src', gifUrl_3);
+  $('#gif_4').attr('src', gifUrl_4);
+  $('#gif_5').attr('src', gifUrl_5);
+  modal.style.display = "block";
+  });
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
+  document.onkeydown = function(event) {
+    if (event.key === "Escape") { // Check if the key pressed is the Escape key
+      modal.style.display = "none";
+    }
+  }
+</script>
 
 </body>
 </html>
