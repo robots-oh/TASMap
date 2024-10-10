@@ -253,9 +253,6 @@
             <h2 class="title is-3">
                 <span style="font-size: 1.2em;">T</span>ask-<span style="font-size: 1.2em;">A</span>ware <span style="font-size: 1.2em;">S</span>emantic <span style="font-size: 1.2em;">M</span>ap
             </h2>
-            <p>
-              어떤 내용의 영상인지 설명하기
-            </p>
             <div class="content">
                 <!-- Columns container for videos -->
                 <div class="columns">
@@ -286,6 +283,9 @@
                     </div>
                 </div>
             </div>
+            <p style="text-align: left;">
+              This is a video of a walkthrough of the inside of TASMap, explaining the labels of object entities and their assigned tasks. The bar above each object entity represents the task-significant vector, while the sphere at the center of each object entity represents 30% of its volume.
+            </p>
             
         </div>
     </div>
@@ -307,11 +307,11 @@
               <!-- PLY viewer container -->
               <div id="controls">
                 <select id="ply-set-select">
-                    <option value="set1">Map #1: Post-Cooking</option>
-                    <option value="set2">Map #2: Post-Excercise</option>
-                    <option value="set2">Map #3: Post-Excercise</option>
-                    <option value="set2">Map #4: Odorous</option>
-                    <option value="set2">Map #5: Odorous</option>
+                    <option value="set1">Post-Cooking: House #n</option>
+                    <option value="set2">Post-Excercise: House #n</option>
+                    <option value="set2">Post-Excercise: House #n</option>
+                    <option value="set2">Odorous: House #n</option>
+                    <option value="set2">Odorous: House #n</option>
                     <!-- Add more sets as needed -->
                 </select>
                 <button id="toggle-ply2">task-significant vector</button>
@@ -460,14 +460,14 @@
           </div>
         </div>
         <p>
-          <span class="tag">Control</span>: <span class="tag">Click image = Show distribution of concept</span> </br>
           To evaluate the performance of TASMap, we produce a new dataset to simulate realistically cluttered residential environments using OmniGibson simulator. 
           Five discrete house samples from the 3D-FRONT dataset are selected to ensure that the dataset covers various room types and sizes. We artificially place objects, dust, and liquids using objects in BEHAVIOR-1K to create a cluttered environments. 
           We construct a total of 35 houses, each consisting of 5 to 7 rooms. These houses are populated with a diverse array of objects, categorized into over 200 types.
           Each house is designed to reflect a specific concept.
           For instance, houses with the 'Post-Cooking' concept predominantly contain tasks such as <span style="font-family: monospace;">Wash</span>, <span style="font-family: monospace;">Wipe</span>, and <span style="font-family: monospace;">Vacuum</span>,
           while the 'Post-Shower' concept houses primarily include tasks like <span style="font-family: monospace;">Mop</span> and <span style="font-family: monospace;">Relocate</span>.
-          Other concepts, such as 'Post-Exercise', 'Odorous' and 'Laundry-Filled', are also included. 
+          Other concepts, such as 'Post-Exercise', 'Odorous' and 'Laundry-Filled', are also included. </br>
+          <span class="tag">Control</span>: <span class="tag">Click image = Show distribution of concept</span> 
         </p>
     </div>
   </div>
@@ -534,7 +534,7 @@
   <div class="container">
     <div class="columns is-centered">
       <video id="hello_robot" autoplay loop muted>
-        <source src="./static/videos/hello_robot.mp4" type="video/mp4">
+        <source src="https://github.com/robots-oh/TASMap/raw/refs/heads/main/static/videos/hello_robot.mp4" type="video/mp4">
       </video>
     </div>
 
