@@ -82,18 +82,14 @@ const loadAndDisplayPLYSet = (set) => {
     // Load PLY2 as a mesh with vertex colors
     loadPLY(ply2, (geometry) => {
         geometry.computeVertexNormals();
-        
-        // Create a material that uses vertex colors with a white background
-        const material = new THREE.MeshStandardMaterial({
-            vertexColors: true, // Enable vertex colors
+        const material = new THREE.PointsMaterial({
+            size: 0.03,
+            vertexColors: true,
             transparent: true, // Enable transparency
-            opacity: 1.0, // Fully opaque
-            color: 0xffffff // Set mesh color to white
+            opacity: 1.0 // Fully opaque
         });
-
-        currentPly2 = new THREE.Mesh(geometry, material);
-        currentPly2.visible = true; // Set to visible
-        scene.add(currentPly2);
+        currentPly1 = new THREE.Points(geometry, material);
+        scene.add(currentPly1);
     });
 };
 
