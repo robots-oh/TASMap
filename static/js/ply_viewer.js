@@ -43,7 +43,7 @@ const loadPLY = (url, onLoad) => {
 // PLY sets
 const plySets = {
     set1: {
-        ply1: './static/ply/stinky_22c.ply', // Replace with actual PLY file for set 1
+        ply1: './static/ply/pcd_shower_2a_liv.ply', // Replace with actual PLY file for set 1
         ply2: './static/ply/mesh_shower_2a_liv.ply'  // Replace with actual PLY file for set 1
     },
     set2: {
