@@ -51,7 +51,7 @@ const plySets = {
         ply2: './static/ply/mesh_shower_2a_liv.ply'
     },
     set3: {
-        ply1: './static/ply/homegym_2a.ply', 
+        ply1: './static/ply/stinky_22c.ply', 
         ply2: './static/ply/mesh_shower_2a_liv.ply'
     },
 };
