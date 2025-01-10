@@ -50,6 +50,10 @@ const plySets = {
         ply1: './static/ply/homegym_2a.ply', 
         ply2: './static/ply/mesh_shower_2a_liv.ply'
     },
+    set3: {
+        ply1: './static/ply/homegym_2a.ply', 
+        ply2: './static/ply/mesh_shower_2a_liv.ply'
+    },
 };
 
 
