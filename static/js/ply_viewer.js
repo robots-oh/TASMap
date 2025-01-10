@@ -47,8 +47,8 @@ const plySets = {
         ply2: './static/ply/mesh_shower_2a_liv.ply'  // Replace with actual PLY file for set 1
     },
     set2: {
-        ply1: 'static/taskmap_scene_3.ply', 
-        ply2: 'static/mesh_shower_2a_liv.ply'
+        ply1: 'static/homegym_2a.ply', 
+        ply2: 'static/homegym_2a.ply'
     },
 };
 
