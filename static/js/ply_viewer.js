@@ -48,7 +48,7 @@ const plySets = {
     },
     set2: {
         ply1: './static/ply/homegym_2a.ply', 
-        ply2: './static/ply/homegym_2a.ply'
+        ply2: './static/ply/mesh_shower_2a_liv.ply'
     },
 };
 
@@ -82,14 +82,18 @@ const loadAndDisplayPLYSet = (set) => {
     // Load PLY2 as a mesh with vertex colors
     loadPLY(ply2, (geometry) => {
         geometry.computeVertexNormals();
-        const material = new THREE.PointsMaterial({
-            size: 0.03,
-            vertexColors: true,
+        
+        // Create a material that uses vertex colors with a white background
+        const material = new THREE.MeshStandardMaterial({
+            vertexColors: true, // Enable vertex colors
             transparent: true, // Enable transparency
-            opacity: 1.0 // Fully opaque
+            opacity: 1.0, // Fully opaque
+            color: 0xffffff // Set mesh color to white
         });
-        currentPly1 = new THREE.Points(geometry, material);
-        scene.add(currentPly1);
+
+        currentPly2 = new THREE.Mesh(geometry, material);
+        currentPly2.visible = true; // Set to visible
+        scene.add(currentPly2);
     });
 };
 
