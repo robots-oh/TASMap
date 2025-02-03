@@ -368,3 +368,9 @@ body {
   cursor: pointer;
 }
 
+#icra_comment{
+  color: #363636;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
